@@ -469,7 +469,7 @@ section {
   .about-image img {
     width: 320px;
     height: 320px;
-    margin-right: 10px;
+    margin-right: 30px;
   }
 
   .hobby-container {
@@ -484,7 +484,7 @@ section {
   .hobby-image img {
     width: 320px;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
   }
    .contact-card {
     width: 130px;
@@ -531,4 +531,5 @@ section {
   display: flex;
   animation: menu-out 0.3s ease-out forwards;
 }
+
 
