@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Alna life </title>
+    <link rel="icon" type="image/png" href="img/icons8-cute-48.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">🌸 Alna</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#hobby">My Hobby</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Konten Placeholder -->
+    <section id="home" class="home-section">
+      <div class="profile-wrapper">
+        <img src="img/alnapp.jfif" alt="Foto Alna" class="profile-pic" />
+      </div>
+      <h2 class="typing-text">
+        Hai my name is <span class="typed-name">Alna</span>
+      </h2>
+      <p>I am a prety girl</p>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <div class="about-image">
+          <img src="img/alna2.jfif" alt="Foto Alna" />
+        </div>
+        <div class="about-text">
+          <h2>Tentang Aku</h2>
+          <p>
+            Hai! Aku Alna, seorang gadis yang suka hal-hal lucu dan warna pink.
+            Aku percaya bahwa dunia akan lebih indah jika kita tersenyum setiap
+            hari! 💖
+          </p>
+          <ul>
+            <li>🌸 Suka menggambar</li>
+            <li>🎀 Pecinta warna pink</li>
+            <li>🧁 Hobi bikin kue lucu</li>
+            <li>🐶 Sayang binatang terutama kucing</li>
+            <li>📚 Suka baca komik dan novel</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobby" class="hobby-section">
+      <div class="hobby-container">
+        <div class="hobby-text">
+          <div class="hobby-image">
+            <img src="img/alna3.jfif" alt="Hobi Alna" />
+          </div>
+          <h2>Hobi Aku 💕</h2>
+          <p>
+            Aku suka melakukan hal-hal lucu dan menyenangkan setiap harinya!
+            Berikut adalah hobi-hobiku:
+          </p>
+          <ul>
+            <li>🎶 Mendengarkan musik K-Pop sambil minum bubble tea</li>
+            <li>📷 Mengedit foto aesthetic dan lucu untuk feed Instagram</li>
+            <li>🖌️ Menggambar karakter imut</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <h2>Hubungi Aku 💌</h2>
+      <p>Ayo terhubung denganku di media sosial atau kirim pesan langsung!</p>
+      <div class="contact-cards">
+        <a
+          href="mailto:alna@example.com"
+          class="contact-card email"
+          target="_blank"
+        >
+          <img src="img/mail.png" alt="Email" />
+          <span>Email</span>
+        </a>
+
+        <a
+          href="https://wa.me/6281234567890"
+          class="contact-card whatsapp"
+          target="_blank"
+        >
+          <img src="img/whatsapp.png" alt="WhatsApp" />
+          <span>WhatsApp</span>
+        </a>
+
+        <a
+          href="https://instagram.com/alna_akun"
+          class="contact-card instagram"
+          target="_blank"
+        >
+          <img src="img/instagram.png" alt="Instagram" />
+          <span>Instagram</span>
+        </a>
+
+        <a
+          href="https://tiktok.com/@alna_akun"
+          class="contact-card tiktok"
+          target="_blank"
+        >
+          <img src="img/tik-tok.png" alt="TikTok" />
+          <span>TikTok</span>
+        </a>
+
+        <a
+          href="https://facebook.com/alna.akun"
+          class="contact-card facebook"
+          target="_blank"
+        >
+          <img src="img/facebook.png" alt="Facebook" />
+          <span>Facebook</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 <span class="brand">ReyDigital.id</span> | All rights reserved.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      let menuOpen = false;
+
+      hamburger.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        if (!menuOpen) {
+          navLinks.classList.remove("hide"); // hapus animasi keluar jika ada
+          navLinks.classList.add("active"); // tampilkan dengan animasi masuk
+          menuOpen = true;
+        } else {
+          navLinks.classList.remove("active");
+          navLinks.classList.add("hide"); // tampilkan animasi keluar
+          menuOpen = false;
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        const isClickInside =
+          navLinks.contains(event.target) || hamburger.contains(event.target);
+
+        if (!isClickInside && menuOpen) {
+          navLinks.classList.remove("active");
+          navLinks.classList.add("hide");
+          menuOpen = false;
+        }
+      });
+
+      // Sembunyikan menu setelah animasi keluar selesai
+      navLinks.addEventListener("animationend", (e) => {
+        if (e.animationName === "menu-out") {
+          navLinks.classList.remove("hide");
+        }
+      });
+
+      function spawnStar() {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.innerText = "✨";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.top = "100vh";
+        star.style.fontSize = Math.random() * 16 + 12 + "px";
+        star.style.opacity = Math.random();
+
+        document.body.appendChild(star);
+
+        setTimeout(() => {
+          star.remove();
+        }, 8000);
+      }
+
+      // Bintang terbang terus-menerus
+      setInterval(spawnStar, 500);
+
+      document.addEventListener("mousemove", function (e) {
+        const foot = document.createElement("div");
+        foot.className = "footprint";
+        foot.innerText = "🐾";
+        foot.style.left = e.pageX + "px";
+        foot.style.top = e.pageY + "px";
+
+        document.body.appendChild(foot);
+
+        setTimeout(() => {
+          foot.remove();
+        }, 1000);
+      });
+
+      document.addEventListener("click", function (e) {
+        for (let i = 0; i < 12; i++) {
+          const confetti = document.createElement("div");
+          confetti.className = "confetti";
+
+          // Posisi
+          confetti.style.left = `${e.clientX}px`;
+          confetti.style.top = `${e.clientY}px`;
+
+          // Random warna dan bentuk lucu
+          const colors = [
+            "#ffb6c1",
+            "#ffd700",
+            "#87cefa",
+            "#ff69b4",
+            "#e0ffff",
+          ];
+          const shapes = ["★", "♥", "✿", "❀", "✨"];
+          confetti.innerText =
+            shapes[Math.floor(Math.random() * shapes.length)];
+          confetti.style.color =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          // Random arah ledakan
+          confetti.style.setProperty("--x", Math.random().toFixed(2));
+          confetti.style.setProperty("--y", Math.random().toFixed(2));
+
+          document.body.appendChild(confetti);
+
+          setTimeout(() => confetti.remove(), 1000);
+        }
+      });
+    </script>
+  </body>
+</html>
