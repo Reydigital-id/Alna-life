@@ -10,6 +10,7 @@ body {
   font-family: "Comic Neue", cursive;
   background-color: #ffe6f0;
   color: #444;
+  max-width: 100vw;
 }
 
 .confetti {
