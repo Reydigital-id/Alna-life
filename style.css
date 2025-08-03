@@ -1,3 +1,10 @@
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Comic Neue", cursive;
@@ -390,7 +397,7 @@ section {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    margin-right: 50px;
+    margin-right: 20px;
   }
 
   .navbar {
@@ -446,8 +453,8 @@ section {
   }
 
   .profile-pic {
-    width: 400px;
-    height: 400px;
+    width: 360px;
+    height: 360px;
   }
 
   .about-container {
@@ -460,8 +467,9 @@ section {
   }
 
   .about-image img {
-    width: 360px;
-    height: 360px;
+    width: 320px;
+    height: 320px;
+    margin-right: 10px;
   }
 
   .hobby-container {
@@ -474,8 +482,9 @@ section {
   }
 
   .hobby-image img {
-    width: 360px;
+    width: 320px;
     margin-top: 20px;
+    margin-right: 20px;
   }
    .contact-card {
     width: 130px;
@@ -522,3 +531,4 @@ section {
   display: flex;
   animation: menu-out 0.3s ease-out forwards;
 }
+
